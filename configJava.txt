@@ -1,0 +1,3 @@
+1. add library for javafx (File -> ProjectSutructure)
+2. add VM which we can copy from javafx site (Run -> Edit configuration) https://openjfx.io/openjfx-docs/
+3. add scene builder exe (File -> Settings -> Languages & Frameworks -> JavaFx)

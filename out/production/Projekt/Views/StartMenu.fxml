@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StartMenuController">
+   <children>
+      <TabPane prefHeight="566.0" prefWidth="1111.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Phones">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="1111.0">
+                     <children>
+                        <SplitPane dividerPositions="0.7560888252148996" layoutX="-6.0" layoutY="-6.0" orientation="VERTICAL" prefHeight="560.0" prefWidth="1124.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="429.0" prefWidth="1118.0">
+                                 <children>
+                                    <TableView fx:id="table" layoutX="-1.0" layoutY="5.0" prefHeight="414.0" prefWidth="1119.0">
+                                       <columns>
+                                          <TableColumn fx:id="id" prefWidth="98.39999240636826" text="UUID" />
+                                          <TableColumn fx:id="name" prefWidth="133.5999755859375" text="Name" />
+                                          <TableColumn fx:id="os" prefWidth="82.40005493164062" text="OS" />
+                                          <TableColumn fx:id="color" prefWidth="71.20001220703125" text="Color" />
+                                          <TableColumn fx:id="ram" prefWidth="68.0" text="RAM(GB)" />
+                                          <TableColumn fx:id="internalMemory" prefWidth="128.800048828125" text="Internal Memory(GB)" />
+                                          <TableColumn fx:id="warranty" prefWidth="81.5999755859375" text="Warranty(y)" />
+                                          <TableColumn fx:id="battery" prefWidth="99.99993896484375" text="Battery(mAh)" />
+                                          <TableColumn fx:id="frontCamera" prefWidth="126.4000244140625" text="Front Camera(px)" />
+                                          <TableColumn fx:id="rearCamera" minWidth="0.0" prefWidth="136.80010986328125" text="Rear Camera(px)" />
+                                          <TableColumn fx:id="price" prefWidth="85.5999755859375" text="Price($)" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="77.0" prefWidth="1111.0">
+                                 <children>
+                                    <Button layoutX="14.0" layoutY="29.0" mnemonicParsing="false" onAction="#generateSampleData" prefHeight="34.0" prefWidth="100.0" text="Info" />
+                                    <Button layoutX="988.0" layoutY="22.0" mnemonicParsing="false" onAction="#onLogoutClicked" prefHeight="37.0" prefWidth="108.0" text="Logout" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Samsung">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2633" prefHeight="510.0" prefWidth="1111.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="302.0">
+                                 <children>
+                                    <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onAction="#getSamsungByUuid" prefHeight="35.0" prefWidth="200.0" text="Get" />
+                                    <Button layoutX="30.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateSamsung" prefHeight="35.0" prefWidth="200.0" text="Update" />
+                                    <Button layoutX="30.0" layoutY="220.0" mnemonicParsing="false" onAction="#deleteSamsung" prefHeight="35.0" prefWidth="200.0" text="Delete" />
+                                    <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#addSamsung" prefHeight="35.0" prefWidth="200.0" text="Add" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="774.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="18.0" prefWidth="316.0" text="UUID" />
+                                    <TextField fx:id="uuidSamsung" layoutX="182.0" layoutY="32.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="nameSamsung" layoutX="182.0" layoutY="83.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="115.0" prefHeight="18.0" prefWidth="316.0" text="OS" />
+                                    <TextField fx:id="osSamsung" layoutX="182.0" layoutY="133.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="166.0" prefHeight="18.0" prefWidth="316.0" text="Color" />
+                                    <TextField fx:id="colorSamsung" layoutX="182.0" layoutY="184.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="322.0" prefHeight="18.0" prefWidth="316.0" text="Warranty" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="276.0" prefHeight="18.0" prefWidth="316.0" text="Internal Memory" />
+                                    <TextField fx:id="internalMemorySamsung" layoutX="182.0" layoutY="295.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="warrantySamsung" layoutX="182.0" layoutY="341.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="368.0" prefHeight="18.0" prefWidth="316.0" text="Battery" />
+                                    <TextField fx:id="batterySamsung" layoutX="182.0" layoutY="387.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="414.0" prefHeight="18.0" prefWidth="316.0" text="Front Camera" />
+                                    <TextField fx:id="frontCameraSamsung" layoutX="182.0" layoutY="432.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="460.0" prefHeight="18.0" prefWidth="316.0" text="Rear Camera" />
+                                    <TextField fx:id="rearCameraSamsung" layoutX="182.0" layoutY="478.0" prefHeight="10.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="64.0" prefHeight="18.0" prefWidth="316.0" text="Name" />
+                                    <Label alignment="CENTER" layoutX="384.0" layoutY="201.0" prefHeight="18.0" prefWidth="227.0" text="PRICE" textFill="#ff0505" />
+                                    <TextField fx:id="priceSamsung" layoutX="406.0" layoutY="223.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="ramSamsung" layoutX="182.0" layoutY="249.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="219.0" prefHeight="18.0" prefWidth="316.0" text="RAM" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Apple">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="1111.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2633" prefHeight="511.0" prefWidth="1111.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="476.0" prefWidth="306.0">
+                                 <children>
+                                    <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#addApple" prefHeight="35.0" prefWidth="200.0" text="Add" />
+                                    <Button layoutX="30.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateApple" prefHeight="35.0" prefWidth="200.0" text="Update" />
+                                    <Button layoutX="30.0" layoutY="220.0" mnemonicParsing="false" onAction="#deleteApple" prefHeight="35.0" prefWidth="200.0" text="Delete" />
+                                    <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onAction="#getAppleByUuid" prefHeight="35.0" prefWidth="200.0" text="Get" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="798.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="18.0" prefWidth="316.0" text="UUID" />
+                                    <TextField fx:id="uuidApple" layoutX="182.0" layoutY="32.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="nameApple" layoutX="182.0" layoutY="83.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="115.0" prefHeight="18.0" prefWidth="316.0" text="OS" />
+                                    <TextField fx:id="osApple" layoutX="182.0" layoutY="133.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="166.0" prefHeight="18.0" prefWidth="316.0" text="Color" />
+                                    <TextField fx:id="colorApple" layoutX="182.0" layoutY="184.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="322.0" prefHeight="18.0" prefWidth="316.0" text="Warranty" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="276.0" prefHeight="18.0" prefWidth="316.0" text="Internal Memory" />
+                                    <TextField fx:id="internalMemoryApple" layoutX="182.0" layoutY="295.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="warrantyApple" layoutX="182.0" layoutY="341.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="368.0" prefHeight="18.0" prefWidth="316.0" text="Battery" />
+                                    <TextField fx:id="batteryApple" layoutX="182.0" layoutY="387.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="414.0" prefHeight="18.0" prefWidth="316.0" text="Front Camera" />
+                                    <TextField fx:id="frontCameraApple" layoutX="182.0" layoutY="432.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="460.0" prefHeight="18.0" prefWidth="316.0" text="Rear Camera" />
+                                    <TextField fx:id="rearCameraApple" layoutX="182.0" layoutY="478.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="64.0" prefHeight="18.0" prefWidth="316.0" text="Name" />
+                                    <Label alignment="CENTER" layoutX="384.0" layoutY="201.0" prefHeight="18.0" prefWidth="227.0" text="PRICE" textFill="#ff0505" />
+                                    <TextField fx:id="priceApple" layoutX="406.0" layoutY="223.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="ramApple" layoutX="182.0" layoutY="249.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="219.0" prefHeight="18.0" prefWidth="316.0" text="RAM" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Xiaomi">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2633" prefHeight="540.0" prefWidth="1111.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="88.0">
+                                 <children>
+                                    <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#addXiaomi" prefHeight="35.0" prefWidth="200.0" text="Add" />
+                                    <Button layoutX="30.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateXiaomi" prefHeight="35.0" prefWidth="200.0" text="Update" />
+                                    <Button layoutX="30.0" layoutY="220.0" mnemonicParsing="false" onAction="#deleteXiaomi" prefHeight="35.0" prefWidth="200.0" text="Delete" />
+                                    <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onAction="#getXiaomiByUuid" prefHeight="35.0" prefWidth="200.0" text="Get" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="1111.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="18.0" prefWidth="316.0" text="UUID" />
+                                    <TextField fx:id="uuidXiaomi" layoutX="182.0" layoutY="32.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="nameXiaomi" layoutX="182.0" layoutY="83.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="115.0" prefHeight="18.0" prefWidth="316.0" text="OS" />
+                                    <TextField fx:id="osXiaomi" layoutX="182.0" layoutY="133.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="166.0" prefHeight="18.0" prefWidth="316.0" text="Color" />
+                                    <TextField fx:id="colorXiaomi" layoutX="182.0" layoutY="184.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="322.0" prefHeight="18.0" prefWidth="316.0" text="Warranty" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="276.0" prefHeight="18.0" prefWidth="316.0" text="Internal Memory" />
+                                    <TextField fx:id="internalMemoryXiaomi" layoutX="182.0" layoutY="295.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="warrantyXiaomi" layoutX="182.0" layoutY="341.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="368.0" prefHeight="18.0" prefWidth="316.0" text="Battery" />
+                                    <TextField fx:id="batteryXiaomi" layoutX="182.0" layoutY="387.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="414.0" prefHeight="18.0" prefWidth="316.0" text="Front Camera" />
+                                    <TextField fx:id="frontCameraXiaomi" layoutX="182.0" layoutY="432.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="460.0" prefHeight="18.0" prefWidth="316.0" text="Rear Camera" />
+                                    <TextField fx:id="rearCameraXiaomi" layoutX="182.0" layoutY="478.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="64.0" prefHeight="18.0" prefWidth="316.0" text="Name" />
+                                    <Label alignment="CENTER" layoutX="384.0" layoutY="201.0" prefHeight="18.0" prefWidth="227.0" text="PRICE" textFill="#ff0505" />
+                                    <TextField fx:id="priceXiaomi" layoutX="406.0" layoutY="223.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="ramXiaomi" layoutX="182.0" layoutY="249.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="219.0" prefHeight="18.0" prefWidth="316.0" text="RAM" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Huawei">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2633" prefHeight="550.0" prefWidth="1111.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="436.0">
+                                 <children>
+                                    <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#addHuawei" prefHeight="35.0" prefWidth="200.0" text="Add" />
+                                    <Button layoutX="30.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateHuawei" prefHeight="35.0" prefWidth="200.0" text="Update" />
+                                    <Button layoutX="30.0" layoutY="220.0" mnemonicParsing="false" onAction="#deleteHuawei" prefHeight="35.0" prefWidth="200.0" text="Delete" />
+                                    <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onAction="#getHuaweiByUuid" prefHeight="35.0" prefWidth="200.0" text="Get" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="1111.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="14.0" prefHeight="18.0" prefWidth="316.0" text="UUID" />
+                                    <TextField fx:id="uuidHuawei" layoutX="182.0" layoutY="32.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="nameHuawei" layoutX="182.0" layoutY="83.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="115.0" prefHeight="18.0" prefWidth="316.0" text="OS" />
+                                    <TextField fx:id="osHuawei" layoutX="182.0" layoutY="133.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="166.0" prefHeight="18.0" prefWidth="316.0" text="Color" />
+                                    <TextField fx:id="colorHuawei" layoutX="182.0" layoutY="184.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="322.0" prefHeight="18.0" prefWidth="316.0" text="Warranty" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="276.0" prefHeight="18.0" prefWidth="316.0" text="Internal Memory" />
+                                    <TextField fx:id="internalMemoryHuawei" layoutX="182.0" layoutY="295.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="warrantyHuawei" layoutX="182.0" layoutY="341.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="368.0" prefHeight="18.0" prefWidth="316.0" text="Battery" />
+                                    <TextField fx:id="batteryHuawei" layoutX="182.0" layoutY="387.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="414.0" prefHeight="18.0" prefWidth="316.0" text="Front Camera" />
+                                    <TextField fx:id="frontCameraHuawei" layoutX="182.0" layoutY="432.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="460.0" prefHeight="18.0" prefWidth="316.0" text="Rear Camera" />
+                                    <TextField fx:id="rearCameraHuawei" layoutX="182.0" layoutY="478.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="64.0" prefHeight="18.0" prefWidth="316.0" text="Name" />
+                                    <Label alignment="CENTER" layoutX="384.0" layoutY="201.0" prefHeight="18.0" prefWidth="227.0" text="PRICE" textFill="#ff0505" />
+                                    <TextField fx:id="priceHuawei" layoutX="406.0" layoutY="223.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <TextField fx:id="ramHuawei" layoutX="182.0" layoutY="249.0" prefHeight="26.0" prefWidth="184.0" />
+                                    <Label alignment="CENTER" layoutX="116.0" layoutY="219.0" prefHeight="18.0" prefWidth="316.0" text="RAM" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
